@@ -48,9 +48,10 @@ main {
 }
 
 .book-card {
-  width: 100%;
-  max-width: 340px; /* kleiner als vorher */
+  width: 24rem;
+
   background-color: var(--paper-color);
+  color: var(--text-dark);
   border-radius: 14px;
   overflow: hidden;
   box-shadow: 0 10px 25px var(--shadow-color);
@@ -59,11 +60,53 @@ main {
   flex-direction: column;
   align-items: center;
 
-  padding: 12px;
-  gap: 12px;
+  padding: 32px;
+  gap: 16px;
 }
 
 .book-image {
   width: 100px;
   height: auto;
+}
+
+.book-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book-facts {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.comment-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  gap: 12rem;
+}
+
+.single-comment {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+input {
+  width: 14rem;
+  height: 2rem;
+  border-radius: 4px;
+  padding: 0.5rem;
 }
