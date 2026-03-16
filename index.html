@@ -10,5 +10,58 @@
 
     <link rel="icon" type="image/png" href="./assets/icon/favicon.png" />
   </head>
-  <body></body>
+  <body>
+    <header class="header">
+      <div>
+        <img src="./assets/logo.png" class="logo" />
+      </div>
+      <div>get your book here</div>
+    </header>
+    <main>
+      <!-----  Book Card 1    ------->
+      <section class="book-card">
+        <h2 class="book-title">Buchtitel</h2>
+
+        <div class="book-img-container">
+          <img src="./assets/img/dracula.jpeg" class="book-image" alt="Cover von Dracule - Die Wiederkehr" />
+        </div>
+        <!-----  Book PRICE & LIKE    ------->
+        <div class="book-info">
+          <span class="book-price">19,99€</span>
+          <button class="like-button" type="button">
+            <img src="./assets/icon/Heart--Streamline-Flex.svg" alt="Like Icon" />
+          </button>
+        </div>
+        <!-----  Book FACTS    ------->
+
+        <div class="book-facts">
+          <div>
+            <span>Author</span>
+            <span>...</span>
+          </div>
+
+          <div>
+            <span>Erscheinungsjahr</span>
+            <span>...</span>
+          </div>
+
+          <div>
+            <span>Genre</span>
+            <span>...</span>
+          </div>
+        </div>
+        <!-----  COMMENT SECTION    ------->
+        <div class="comment-section">
+          <div class="comment-list">
+            <div class="single-comment"><strong>[UserName]</strong> UserText</div>
+          </div>
+          <!-----  INPUT    ------->
+          <div class="form">
+            <input type="text" placeholder="Schreibe ein Kommentar..." />
+            <button>Send</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
