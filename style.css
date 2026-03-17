@@ -70,6 +70,8 @@ main {
 .book-title {
   margin: auto;
   text-align: center;
+
+  border-bottom: 2px solid var(--primary-color);
 }
 
 .book-image {
@@ -83,6 +85,8 @@ main {
   width: 100%;
   display: flex;
   justify-content: space-between;
+
+  border-bottom: 2px solid var(--primary-color);
 }
 
 .like-container {
@@ -95,6 +99,15 @@ main {
   font-size: 2rem;
   color: var(--primary-color);
   font-weight: bold;
+}
+
+.like-button {
+  background-color: var(--paper-color);
+  border: none;
+}
+
+.like-button img {
+  width: 1rem;
 }
 
 .book-facts {
@@ -112,6 +125,9 @@ main {
   justify-content: space-between;
 
   gap: 12rem;
+
+  border-top: 2px solid var(--primary-color);
+  padding-top: 6px;
 }
 
 .single-comment {
@@ -127,13 +143,15 @@ main {
 }
 
 .form input {
-  border: none;
-  outline: none;
-
   width: 14rem;
   height: 2rem;
-  border-radius: 4px;
   padding: 0.5rem;
+
+  background-color: var(--text-light);
+  border: none;
+
+  border-radius: 8px;
+  border-bottom: solid var(--primary-color);
 }
 
 .btn {

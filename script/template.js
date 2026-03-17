@@ -1,4 +1,4 @@
-function bookTemplate(book) {
+function bookTemplate(book, index) {
   document.getElementById('content').innerHTML += ` 
 <div class="display-flex">
       <section class="book-card">
@@ -10,10 +10,10 @@ function bookTemplate(book) {
 
         <div class="book-info">
           <span class="book-price">${book.price} €</span>
-          <div class="like-container">
+          <div class="like-container" id="like-container${index}">
             <span>${book.likes}</span> 
-            <button class="like-button" type="button" onclick="likes()">
-                <img id="icon" src="./assets/icon/Heart--Streamline-Flex.svg" alt="Like Icon" />
+            <button class="like-button" type="button" onclick="setLike(${index})">
+                <img id="icon${index}" src="./assets/icon/heart.svg" />
             </button>
             </div>
         </div>

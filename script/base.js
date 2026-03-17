@@ -15,14 +15,28 @@ function renderBooks() {
 
   for (let index = 0; index < books.length; index++) {
     let book = books[index];
-    bookTemplate(book);
+    bookTemplate(book, index);
   }
 }
 
-//function likes() {
-// let button = books[index].liked;
+function setLike(index) {
+  let isBookLiked = books[index].liked; // Wert wird in der Variable gespeichert (True oder False)
 
-// if (button === false) {
-//   ((document.getElementById('icon').src = './assets/icon/heart-filled.svg'), (books[index].likes = books[index].like + 1));
-//}
-//}
+  if (isBookLiked === false) {
+    books[index].liked = true;
+    books[index].likes++;
+  }
+  renderLikes(index);
+}
+// False ist zu True geworden
+// und 5 ist auf 6 gegangen
+
+function renderLikes(index) {
+  document.getElementById(`like-container${index}`);
+
+  if (books[index].liked === false) {
+    document.getElementById(`icon${index}`).src = './assets/icon/heart-filled.svg';
+  } else {
+    document.getElementById(`icon${index}`).src = './assets/icon/heart.svg';
+  }
+}
