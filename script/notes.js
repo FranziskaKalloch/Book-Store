@@ -40,3 +40,46 @@ comments: [
 //Der Benutzer schreibt etwas ins Inputfeld →
 // dein Code liest den Text aus → dein Code erstellt ein neues Kommentarobjekt →
 // dieses Objekt wird ins comments-Array gelegt.
+
+/// Funktionen + Parameter
+// ---> Funktionen sind kleine Maschinen, die Input bekommen und Output generieren!
+
+function greet(name) {
+  return 'hallo' + name;
+}
+// name ist ein Platzhalter
+// der echte Wert wird im Funktionaufruf eingefügt!
+greet('Franzy');
+
+function doubleNumber(number) {
+  return number * 2;
+}
+doubleNumber(8);
+
+function fullName(first, last) {
+  return first + ' ' + last;
+}
+
+fullName('Franziska', 'Kalloch');
+
+////
+
+function renderBooks() {
+  document.getElementById('content').innerHTML = '';
+
+  for (let index = 0; index < books.length; index++) {
+    let singleBook = books[index];
+    bookTemplate(`${book}`); // das funktioniert nicht, da es ein Objekt ist.
+    // Abändern zu ---> bookTemplate(book);
+  }
+}
+//Template-String
+//→ aber book ist ein Objekt
+//→ Ergebnis: [object Object] (nutzlos)
+// -> das richtige bookTemplate(singleBook);
+// → du übergibst das echte Objekt
+
+// ${books} ist das ganze Objekt
+// (let) singleBook ist jedes einzelne Buch aus dem JSON ARRAY
+
+bookTemplate(singleBook);

@@ -30,7 +30,10 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 24px;
+  flex-direction: column;
+  padding-top: 32px;
+
+  gap: 32px;
 }
 
 .header {
