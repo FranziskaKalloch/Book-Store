@@ -67,6 +67,11 @@ main {
   gap: 16px;
 }
 
+.book-title {
+  margin: auto;
+  text-align: center;
+}
+
 .book-image {
   width: 100px;
   height: auto;
@@ -79,11 +84,18 @@ main {
   align-items: center;
 }
 
+.book-price {
+  font-size: 2rem;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
 .book-facts {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+
+  gap: 12px;
 }
 
 .comment-section {

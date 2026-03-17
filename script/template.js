@@ -1,11 +1,11 @@
 function bookTemplate(book) {
   document.getElementById('content').innerHTML += ` 
-
+<div class="display-flex">
       <section class="book-card">
         <h2 class="book-title">${book.title}</h2>
 
         <div class="book-img-container">
-          <img src="./assets/img/dracula.jpeg" class="book-image" alt="Cover von Dracule - Die Wiederkehr" />
+          <img src="${book.image}" class="book-image">
         </div>
 
         <div class="book-info">

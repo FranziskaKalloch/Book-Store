@@ -11,7 +11,7 @@ let books = [
     comments: [],
   },
   {
-    title: 'Das Lied von Eis und Feuer (Band 1)',
+    title: 'Das Lied von Eis und Feuer Der Winter naht',
     author: 'G.R.R Martin',
     year: 1996,
     genre: 'Fantasy',
