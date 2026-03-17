@@ -6,16 +6,9 @@
 //• Herzfarbe abhängig von liked
 //• Likes hoch/runter zählen
 
-currentBook = 0;
-
 function init() {
   renderBooks();
 }
-
-// durch das array gehen
-// für jedes Buch HTML erzeugen
-// alles ins DOM schreiben
-// HTML Code in andere Funktion aussortieren
 
 function renderBooks() {
   document.getElementById('content').innerHTML = '';
@@ -25,3 +18,11 @@ function renderBooks() {
     bookTemplate(book);
   }
 }
+
+//function likes() {
+// let button = books[index].liked;
+
+// if (button === false) {
+//   ((document.getElementById('icon').src = './assets/icon/heart-filled.svg'), (books[index].likes = books[index].like + 1));
+//}
+//}

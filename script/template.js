@@ -12,8 +12,8 @@ function bookTemplate(book) {
           <span class="book-price">${book.price} €</span>
           <div class="like-container">
             <span>${book.likes}</span> 
-            <button class="like-button" type="button">
-                <img src="./assets/icon/Heart--Streamline-Flex.svg" alt="Like Icon" />
+            <button class="like-button" type="button" onclick="likes()">
+                <img id="icon" src="./assets/icon/Heart--Streamline-Flex.svg" alt="Like Icon" />
             </button>
             </div>
         </div>
@@ -42,7 +42,7 @@ function bookTemplate(book) {
 
           <div class="form">
             <input type="text" placeholder="Schreibe ein Kommentar..." />
-            <button>Send</button>
+            <button class="btn">Send</button>
           </div>
         </div>
       </section>

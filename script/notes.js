@@ -83,3 +83,50 @@ function renderBooks() {
 // (let) singleBook ist jedes einzelne Buch aus dem JSON ARRAY
 
 bookTemplate(singleBook);
+
+// Schleife
+// Durchlauf 1
+// singleBook = books[0]; // erstes Buch
+//// Durchlauf 2
+// singleBook = books[1]; // zweites Buch
+// Du hast also pro Durchlauf:
+//👉 ein einzelnes Buch
+//Und dieses gibst du weiter: bookTemplate(singleBook);
+
+// Hiermit ist die Ausgabe Object Object
+
+function bookTemplate(book) {
+  document.getElementById('content').innerHTML += ` 
+
+<section class="book-card">
+<h2 class="book-title">${book}</h2>
+...`;
+}
+
+// → JavaScript denkt:
+//„Okay, du willst das ganze Objekt als Text… viel Spaß“
+
+//→ [object Object]
+// ${book.title}
+//${book.image}
+
+// LIKE likeCounter
+// Beim Klick auf ❤️:
+//	•	Likes erhöhen / verringern
+//	•	Zustand speichern (liked)
+//	•	UI aktualisieren
+
+// Ich möchte die Anzahl der likes im books Array erhöhen
+// die Funktion sollte auf das book Array zugreifen können, passend zu
+// dem Buch, wo geliked wurde
+// ----> das heisst man müsste der Funktion einen Index mitgeben, der zum Buch passt
+// ---> also function like(index) {
+// Beim erste BUch wäre es 0, beim zweiten Buch 1
+//}
+// Im array books an der stelle 0 die Eigenschaft likes zu verändern:
+// -> books[index].likes = den gleichen Wert + 1 rechnen, also
+// ------> books[0].likes = books[0].like + 1
+
+// Damit wir der Wert links überschrieben
+
+// danach muss diese Stelle neu gerendert werden.
