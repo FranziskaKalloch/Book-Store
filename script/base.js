@@ -25,18 +25,22 @@ function setLike(index) {
   if (isBookLiked === false) {
     books[index].liked = true;
     books[index].likes++;
+  } else {
+    books[index].liked = false;
+    books[index].likes--;
   }
+
   renderLikes(index);
 }
 // False ist zu True geworden
 // und 5 ist auf 6 gegangen
 
 function renderLikes(index) {
-  document.getElementById(`like-container${index}`);
-
   if (books[index].liked === false) {
-    document.getElementById(`icon${index}`).src = './assets/icon/heart-filled.svg';
-  } else {
     document.getElementById(`icon${index}`).src = './assets/icon/heart.svg';
+  } else {
+    document.getElementById(`icon${index}`).src = './assets/icon/heart-filled.svg';
   }
+  // Zahl ändern
+  document.getElementById(`likes${index}`).innerHTML = books[index].likes;
 }

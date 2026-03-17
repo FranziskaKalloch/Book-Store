@@ -11,7 +11,7 @@ function bookTemplate(book, index) {
         <div class="book-info">
           <span class="book-price">${book.price} €</span>
           <div class="like-container" id="like-container${index}">
-            <span>${book.likes}</span> 
+            <span id="likes${index}">${book.likes}</span> 
             <button class="like-button" type="button" onclick="setLike(${index})">
                 <img id="icon${index}" src="./assets/icon/heart.svg" />
             </button>
