@@ -64,7 +64,7 @@ main {
   align-items: center;
 
   padding: 32px;
-  gap: 16px;
+  gap: 1.5rem;
 }
 
 .book-title {
@@ -73,15 +73,22 @@ main {
 }
 
 .book-image {
-  width: 100px;
+  width: 120px;
   height: auto;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .book-info {
   width: 100%;
   display: flex;
   justify-content: space-between;
+}
+
+.like-container {
+  display: flex;
   align-items: center;
+  gap: 1rem;
 }
 
 .book-price {

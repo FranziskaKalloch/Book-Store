@@ -10,9 +10,12 @@ function bookTemplate(book) {
 
         <div class="book-info">
           <span class="book-price">${book.price} €</span>
-          <button class="like-button" type="button">
-            <img src="./assets/icon/Heart--Streamline-Flex.svg" alt="Like Icon" />
-          </button>
+          <div class="like-container">
+            <span>${book.likes}</span> 
+            <button class="like-button" type="button">
+                <img src="./assets/icon/Heart--Streamline-Flex.svg" alt="Like Icon" />
+            </button>
+            </div>
         </div>
 
         <div class="book-facts">
