@@ -13,7 +13,7 @@ function bookTemplate(book, index) {
           <div class="like-container" id="like-container${index}">
             <span id="likes${index}">${book.likes}</span> 
             <button class="like-button" type="button" onclick="setLike(${index})">
-                <img id="icon${index}" src="./assets/icon/heart.svg" />
+                <img id="icon${index}" src="./assets/icon/mogen.png" />
             </button>
             </div>
         </div>
@@ -37,12 +37,13 @@ function bookTemplate(book, index) {
 
         <div class="comment-section">
           <div class="comment-list">
-            <div class="single-comment"><strong>[UserName]</strong> UserText</div>
+        ${getCommentsHtml(index)}
+        </div>
           </div>
 
           <div class="form">
-            <input type="text" placeholder="Schreibe ein Kommentar..." />
-            <button class="btn">Send</button>
+            <input id="input${index}" type="text" placeholder="Schreibe ein Kommentar..." />
+            <button class="btn" type="button" id="addComment${index}" onclick="addComment(${index})">Send</button>
           </div>
         </div>
       </section>

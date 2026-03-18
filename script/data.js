@@ -8,7 +8,12 @@ let books = [
     image: './assets/img/dracula.jpeg',
     likes: 5,
     liked: false,
-    comments: [],
+    comments: [
+      {
+        userName: 'Franzy',
+        userText: 'Super Buch',
+      },
+    ],
   },
   {
     title: 'Das Lied von Eis und Feuer Der Winter naht',

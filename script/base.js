@@ -1,12 +1,5 @@
-// •Bücher aus books rendern
-//• HTML-Template-Funktion erstellt
-//• Kommentare pro Buch rendern
-//• neue Kommentare hinzufügt
-//• Like-Funktion gebaut
-//• Herzfarbe abhängig von liked
-//• Likes hoch/runter zählen
-
 function init() {
+  loadFromLocalStorage();
   renderBooks();
 }
 
@@ -30,6 +23,7 @@ function setLike(index) {
     books[index].likes--;
   }
 
+  saveToLocalStorage();
   renderLikes(index);
 }
 // False ist zu True geworden
@@ -37,10 +31,58 @@ function setLike(index) {
 
 function renderLikes(index) {
   if (books[index].liked === false) {
-    document.getElementById(`icon${index}`).src = './assets/icon/heart.svg';
+    document.getElementById(`icon${index}`).src = './assets/icon/mogen.png';
   } else {
-    document.getElementById(`icon${index}`).src = './assets/icon/heart-filled.svg';
+    document.getElementById(`icon${index}`).src = './assets/icon/liebe.png';
   }
   // Zahl ändern
   document.getElementById(`likes${index}`).innerHTML = books[index].likes;
+}
+
+function addComment(index) {
+  let userName = ['User234', 'Sansa', 'Daenery', 'Jon Snow', 'Arya', 'Brienne', 'User54'];
+  let inputRef = document.getElementById(`input${index}`);
+  let comment = inputRef.value;
+
+  let randomIndex = Math.floor(Math.random() * userName.length);
+  let randomName = userName[randomIndex];
+
+  let newComment = {
+    userName: randomName,
+    userText: comment,
+  };
+
+  books[index].comments.push(newComment);
+
+  inputRef.value = '';
+
+  saveToLocalStorage();
+  renderBooks();
+}
+
+function getCommentsHtml(bookIndex) {
+  let commentsHtml = '';
+
+  for (let i = 0; i < books[bookIndex].comments.length; i++) {
+    let comment = books[bookIndex].comments[i];
+
+    commentsHtml += `
+      <div class="single-comment">
+        <strong>${comment.userName}</strong> ${comment.userText}
+      </div>
+    `;
+  }
+  return commentsHtml;
+}
+
+function saveToLocalStorage() {
+  localStorage.setItem('books', JSON.stringify(books));
+}
+
+function loadFromLocalStorage() {
+  let booksAsText = localStorage.getItem('books');
+
+  if (booksAsText) {
+    books = JSON.parse(booksAsText);
+  }
 }

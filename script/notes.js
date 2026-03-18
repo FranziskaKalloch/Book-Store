@@ -130,3 +130,89 @@ function bookTemplate(book) {
 // Damit wir der Wert links überschrieben
 
 // danach muss diese Stelle neu gerendert werden.
+
+function addComment(index) {
+  let userName = ['User234', 'Sansa', 'Daenery', 'Jon Snow', 'Arya', 'Brienne', 'User54'];
+  let inputRef = document.getElementById(`input${index}`);
+  let comment = inputRef.value;
+
+  let randomIndex = Math.floor(Math.random() * userName.length);
+  let randomName = userName[randomIndex];
+
+  let newComment = {
+    userName: randomName,
+    userText: comment,
+  };
+
+  books[index].comments.push(newComment);
+
+  inputRef.value = '';
+
+  renderBooks();
+}
+
+//
+
+function getCommentsHtml(bookIndex) {
+  let commentsHtml = '';
+
+  for (let i = 0; i < books[bookIndex].comments.length; i++) {
+    let comment = books[bookIndex].comments[i];
+
+    commentsHtml += `
+      <div class="single-comment">
+        <strong>${comment.userName}</strong> ${comment.userText}
+      </div>
+    `;
+  }
+  return commentsHtml;
+}
+
+// LOCAL STORAGE
+
+// speichern (setItem) ---> localStorage.setItem('key, 'value');
+// abrufen (getItem) --->  let data = localStorage.getItem('key');
+
+// Nur Strings können gespeichert werden:
+// Für Objekte und Array muss ------> JSON.stringify() beim Speichern und JSON.parse beim Auslesen verwendet werden
+
+function saveToLocalStorage() {
+  let bookStates = [];
+
+  for (let index = 0; index < books.length; index++) {
+    bookStates.push({
+      likes: books[index].likes,
+      liked: books[index].liked,
+      comments: books[index].comments,
+    });
+  }
+
+  localStorage.setItem('bookStates', JSON.stringify(bookStates));
+}
+
+function loadFromLocalStorage() {
+  let storedData = localStorage.getItem('bookStates');
+
+  if (storedData) {
+    let bookStates = JSON.parse(storedData);
+
+    for (let index = 0; index < books.length; index++) {
+      books[index].likes = bookStates[index].likes;
+      books[index].liked = bookStates[index].liked;
+      books[index].comments = bookStates[index].comments;
+    }
+  }
+}
+
+[
+  {
+    likes: 4,
+    liked: true,
+    comments: [{ userName: 'Arya', userText: 'Tolles Buch' }],
+  },
+  {
+    likes: 2,
+    liked: false,
+    comments: [],
+  },
+];
