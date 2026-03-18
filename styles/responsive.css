@@ -27,4 +27,8 @@
   }
 }
 
-@media (min-width: );
+@media (max-width: 480px) {
+  html {
+    font-size: 12px;
+  }
+}
