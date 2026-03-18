@@ -1,11 +1,11 @@
 function bookTemplate(book, index) {
   document.getElementById('content').innerHTML += ` 
-<div class="display-flex">
+    <div class="display-flex">
       <section class="book-card">
         <h2 class="book-title">${book.title}</h2>
 
         <div class="book-img-container">
-          <img src="${book.image}" class="book-image">
+          <img src="${book.image}" class="book-image" />
         </div>
 
         <div class="book-info">
@@ -13,9 +13,9 @@ function bookTemplate(book, index) {
           <div class="like-container" id="like-container${index}">
             <span id="likes${index}">${book.likes}</span> 
             <button class="like-button" type="button" onclick="setLike(${index})">
-                <img id="icon${index}" src="./assets/icon/mogen.png" />
+              <img id="icon${index}" src="./assets/icon/mogen.png" />
             </button>
-            </div>
+          </div>
         </div>
 
         <div class="book-facts">
@@ -25,7 +25,7 @@ function bookTemplate(book, index) {
           </div>
 
           <div>
-            <span><strong>Erscheinungsjahr:</strong> </span>
+            <span><strong>Erscheinungsjahr:</strong></span>
             <span>${book.year}</span>
           </div>
 
@@ -37,8 +37,7 @@ function bookTemplate(book, index) {
 
         <div class="comment-section">
           <div class="comment-list">
-        ${getCommentsHtml(index)}
-        </div>
+            ${getCommentsHtml(index)}
           </div>
 
           <div class="form">
@@ -47,5 +46,6 @@ function bookTemplate(book, index) {
           </div>
         </div>
       </section>
-      `;
+    </div>
+  `;
 }
