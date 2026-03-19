@@ -35,7 +35,7 @@ function renderLikes(index) {
   } else {
     document.getElementById(`icon${index}`).src = './assets/icon/liebe.png';
   }
-  // Zahl ändern
+  
   document.getElementById(`likes${index}`).innerHTML = books[index].likes;
 }
 

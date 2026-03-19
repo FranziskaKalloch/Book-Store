@@ -151,22 +151,42 @@ function addComment(index) {
   renderBooks();
 }
 
-//
+// Erläuterung --- Nimm alle Kommentare und mach daraus einen großen HTML String!
 
-function getCommentsHtml(bookIndex) {
-  let commentsHtml = '';
+function getCommentsHtml(bookIndex) { // Die Funktion bekommt: bookIndex -> welches Buch: 0,1,2,..
+  let commentsHtml = ''; // Leerer Start - Am Anfang soll alles leer sein, danach wird alles an HTML hier reingepackt
 
-  for (let i = 0; i < books[bookIndex].comments.length; i++) {
-    let comment = books[bookIndex].comments[i];
+  for (let i = 0; i < books[bookIndex].comments.length; i++) { // Schleife durch die Kommentare -> geh durch alle Kommentare dieses Buches!
+    let comment = books[bookIndex].comments[i]; // Hier werden die einzelnen Kommentare geholt
 
-    commentsHtml += `
+    commentsHtml += `  
       <div class="single-comment">
         <strong>${comment.userName}</strong> ${comment.userText}
       </div>
-    `;
+    `; // Hier wird das HTML gebaut und angefügt
   }
-  return commentsHtml;
+  return commentsHtml; // gib mir das fertige HTML zurück 
 }
+
+
+// mit let commentHtml bereiten wir das HTML vor. Es wird aber erstmal Text zusammen gebaut und dann später dieser Container genutzt!
+// Diese Funktion soll allgemein nur etwas ZURÜCKGEBEN und nicht wie viele andere Funktionen was anzeigen! 
+// let commentHtml = ''; -> heisst einfach nur, das ist eine leere Variable! Es wird nichts im DOM gelöscht.
+// innerHTML = ''; // löscht echte HTML Inhalte
+// let x = ''; erstellt nur eine leere Variable!
+
+// Warum wird hier return benutzt? 
+// ----> die function getCommentHTML(bookIndex): 
+// input --> bookIndex
+// output --> fertiger HTML String
+// Ohne return würde hier nichts zurückgegeben werden und es steht undefined
+
+// Warum ${getCommentsHtml(index)}?
+// 
+
+
+
+
 
 // LOCAL STORAGE
 
@@ -176,43 +196,3 @@ function getCommentsHtml(bookIndex) {
 // Nur Strings können gespeichert werden:
 // Für Objekte und Array muss ------> JSON.stringify() beim Speichern und JSON.parse beim Auslesen verwendet werden
 
-function saveToLocalStorage() {
-  let bookStates = [];
-
-  for (let index = 0; index < books.length; index++) {
-    bookStates.push({
-      likes: books[index].likes,
-      liked: books[index].liked,
-      comments: books[index].comments,
-    });
-  }
-
-  localStorage.setItem('bookStates', JSON.stringify(bookStates));
-}
-
-function loadFromLocalStorage() {
-  let storedData = localStorage.getItem('bookStates');
-
-  if (storedData) {
-    let bookStates = JSON.parse(storedData);
-
-    for (let index = 0; index < books.length; index++) {
-      books[index].likes = bookStates[index].likes;
-      books[index].liked = bookStates[index].liked;
-      books[index].comments = bookStates[index].comments;
-    }
-  }
-}
-
-[
-  {
-    likes: 4,
-    liked: true,
-    comments: [{ userName: 'Arya', userText: 'Tolles Buch' }],
-  },
-  {
-    likes: 2,
-    liked: false,
-    comments: [],
-  },
-];
