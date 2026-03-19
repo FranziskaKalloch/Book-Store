@@ -1,6 +1,6 @@
 function bookTemplate(book, index) {
   document.getElementById('content').innerHTML += ` 
-    <div class="display-flex">
+    <div>
       <section class="book-card">
         <h2 class="book-title">${book.title}</h2>
 
@@ -13,7 +13,7 @@ function bookTemplate(book, index) {
           <div class="like-container" id="like-container${index}">
             <span id="likes${index}">${book.likes}</span> 
             <button class="like-button" type="button" onclick="setLike(${index})">
-              <img id="icon${index}" src="./assets/icon/mogen.png" />
+              <img id="icon${index}" src="./assets/icon/${book.liked ? 'liebe.png' : 'mogen.png'}">
             </button>
           </div>
         </div>
@@ -36,7 +36,7 @@ function bookTemplate(book, index) {
         </div>
 
         <div class="comment-section">
-          <div class="comment-list">
+          <div class="comment-list" id="comment${index}">
             ${getCommentsHtml(index)}
           </div>
 

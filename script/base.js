@@ -54,8 +54,8 @@ function addComment(index) {
 
   inputRef.value = '';
 
+  document.getElementById(`comment${index}`).innerHTML = getCommentsHtml(index);
   saveToLocalStorage();
-  renderBooks();
 }
 
 function getCommentsHtml(bookIndex) {
@@ -70,8 +70,6 @@ function getCommentsHtml(bookIndex) {
       </div>
     `;
   }
-
-  // „Wenn das Kommentare-Array leer ist → gib speziellen HTML-Text zurück“
 
   if (books[bookIndex].comments.length == 0) {
     return `<div class="no-comment">
