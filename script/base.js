@@ -13,7 +13,7 @@ function renderBooks() {
 }
 
 function setLike(index) {
-  let isBookLiked = books[index].liked; // Wert wird in der Variable gespeichert (True oder False)
+  let isBookLiked = books[index].liked;
 
   if (isBookLiked === false) {
     books[index].liked = true;
@@ -26,8 +26,6 @@ function setLike(index) {
   saveToLocalStorage();
   renderLikes(index);
 }
-// False ist zu True geworden
-// und 5 ist auf 6 gegangen
 
 function renderLikes(index) {
   if (books[index].liked === false) {
@@ -35,7 +33,7 @@ function renderLikes(index) {
   } else {
     document.getElementById(`icon${index}`).src = './assets/icon/liebe.png';
   }
-  
+
   document.getElementById(`likes${index}`).innerHTML = books[index].likes;
 }
 
@@ -72,6 +70,15 @@ function getCommentsHtml(bookIndex) {
       </div>
     `;
   }
+
+  // „Wenn das Kommentare-Array leer ist → gib speziellen HTML-Text zurück“
+
+  if (books[bookIndex].comments.length == 0) {
+    return `<div class="no-comment">
+        <strong>Keine Kommentare</strong>
+      </div>`;
+  }
+
   return commentsHtml;
 }
 
