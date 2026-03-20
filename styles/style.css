@@ -24,16 +24,26 @@
 
 body {
   background-color: var(--accent-color);
+  min-height: 100dvh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  flex: 1;
 }
 
 main {
   max-width: 1920px;
 
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
   flex-wrap: wrap;
-  flex: 1;
+  justify-content: center;
 
   padding: 32px 16px;
 
@@ -41,15 +51,17 @@ main {
 }
 
 .header {
-  width: 100vw;
-  padding-inline: 100px;
-
-  display: flex;
-  align-items: center;
-
+  width: 100%;
   gap: 16px;
   background-color: var(--primary-color);
   color: var(--text-light);
+}
+
+.content-limitation-header {
+  max-width: 1920px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo {
