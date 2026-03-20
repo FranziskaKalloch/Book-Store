@@ -42,9 +42,8 @@ main {
   max-width: 1920px;
 
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-
+  flex-wrap: wrap;
   padding: 32px 16px;
 
   gap: 32px;
@@ -55,12 +54,18 @@ main {
   gap: 16px;
   background-color: var(--primary-color);
   color: var(--text-light);
+
+  display: flex;
+  justify-content: center;
+
+  padding-inline: 32px;
 }
 
 .content-limitation-header {
   max-width: 1920px;
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
