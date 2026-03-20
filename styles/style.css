@@ -33,6 +33,7 @@ main {
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
+  flex: 1;
 
   padding: 32px 16px;
 
@@ -40,8 +41,8 @@ main {
 }
 
 .header {
-  max-width: 1920px;
-  padding-inline: 110px;
+  width: 100vw;
+  padding-inline: 100px;
 
   display: flex;
   align-items: center;

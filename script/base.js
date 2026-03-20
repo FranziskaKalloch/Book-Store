@@ -64,17 +64,11 @@ function getCommentsHtml(bookIndex) {
   for (let i = 0; i < books[bookIndex].comments.length; i++) {
     let comment = books[bookIndex].comments[i];
 
-    commentsHtml += `
-      <div class="single-comment">
-        <strong>${comment.userName}</strong> ${comment.userText}
-      </div>
-    `;
+    commentsHtml += commentsTemplate(comment);
   }
 
   if (books[bookIndex].comments.length == 0) {
-    return `<div class="no-comment">
-        <strong>Keine Kommentare</strong>
-      </div>`;
+    return noComment();
   }
 
   return commentsHtml;

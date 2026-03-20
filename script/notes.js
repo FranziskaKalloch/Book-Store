@@ -192,3 +192,37 @@ function getCommentsHtml(bookIndex) {
 
 // Nur Strings können gespeichert werden:
 // Für Objekte und Array muss ------> JSON.stringify() beim Speichern und JSON.parse beim Auslesen verwendet werden
+
+// Templates auslagern
+
+function getCommentsHtml(bookIndex) {
+  let commentsHtml = '';
+
+  for (let i = 0; i < books[bookIndex].comments.length; i++) {
+    let comment = books[bookIndex].comments[i];
+
+    commentsHtml += commentsTemplate(comment);
+  }
+
+  if (books[bookIndex].comments.length == 0) {
+    return noComment();
+  }
+
+  return commentsHtml;
+}
+
+function commentsTemplate(comment) {
+  return `<div class="single-comment">
+        <strong>${comment.userName}</strong> ${comment.userText}
+      </div>
+    `;
+}
+
+function noComment() {
+  return `<div class="no-comment">
+        <strong>Keine Kommentare</strong>
+      </div>`;
+}
+
+// 	•	getCommentsHtml() sammelt alles zusammen
+//	•	commentsTemplate(comment) baut einen Kommentar

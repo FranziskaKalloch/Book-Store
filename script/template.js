@@ -49,3 +49,16 @@ function bookTemplate(book, index) {
     </div>
   `;
 }
+
+function commentsTemplate(comment) {
+  return `<div class="single-comment">
+        <strong>${comment.userName}</strong> ${comment.userText}
+      </div>
+    `;
+}
+
+function noComment() {
+  return `<div class="no-comment">
+        <strong>Keine Kommentare</strong>
+      </div>`;
+}
